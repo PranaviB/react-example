@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
-//This component is to check availablity of global states at mulitple places
+//This component is to check availablity of global store at mulitple places
 
 class AnimalInfo extends Component {
 	render(){

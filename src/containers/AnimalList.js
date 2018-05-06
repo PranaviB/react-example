@@ -30,9 +30,6 @@ class AnimalList extends Component {
 					<div className="col-sm-1">
 						<p> Name </p> 
 					</div>
-					<div className="col-sm-1">
-						<p> Age </p> 
-					</div>
 				</div>
 				{this.renderAnimals()}
 			</div>)

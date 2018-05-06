@@ -11,8 +11,12 @@ class AnimalDetails extends Component {
 					<p>{this.props.selectedAnimal.name}</p>
 				</div>
 				<div className="row" >
-					<lable> Age: </lable>
-					<p>{this.props.selectedAnimal.age}</p>
+					<lable> Species: </lable>
+					<p>{this.props.selectedAnimal.species}</p>
+				</div>
+				<div className="row" >
+					<lable> BirthYear: </lable>
+					<p>{this.props.selectedAnimal.birthYear}</p>
 				</div>
 			</div>
 			)	
