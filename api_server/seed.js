@@ -3,7 +3,7 @@ module.exports = function(){
 	let index = 0
 	let animals =[]
 	let zookeepers = []
-	while(index<=100){
+	while(index<=10){
 		animals.push({
 			id: index,
 			name: faker.name.findName(),

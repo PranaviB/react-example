@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {selectAnimal} from '../actions'
+import {selectAnimal, fetchAnimalsList} from '../actions'
 import {bindActionCreators} from 'redux'
 
 class AnimalList extends Component {
@@ -9,9 +9,18 @@ class AnimalList extends Component {
 		super();
 	}
 
+	// constructor
+	// lifecycle methods
+	// ownmethods
+	// render
+
+	componentWillMount(){
+		this.props.fetchAnimalsList();
+	}
+
 	renderAnimals(){
 		let counter = 0;
-		return this.props.animals.map(animal => {
+		return this.props.animalsList.map(animal => {
 				counter += 1;
 				return (<div className="row" key={counter} onClick={() => {this.props.selectAnimal(animal)}}>
 					<div className="col-sm-1">
@@ -23,7 +32,11 @@ class AnimalList extends Component {
 	}
 
 	render(){
-		console.log(this)
+		// console.log(this)
+		if(!this.props.animalsList){
+			return(<div>Loading...</div>)
+		}
+
 		return(
 			<div >
 				<div className="row">
@@ -38,17 +51,19 @@ class AnimalList extends Component {
 
 // Bind reducers to get state as props
 function mapStateToProps(state){
-	console.log(state)
+	// console.log(state)
 	return {
 		animals: state.animals,
-		selectedAnimal: state.selectedAnimal
+		selectedAnimal: state.selectedAnimal,
+		animalsList: state.getAnimalsList
 	}
 }
 
 // Bind actions to push state to reducers 
 function mapDispatchToProps(dispatch){
 	return bindActionCreators({
-		selectAnimal
+		selectAnimal,
+		fetchAnimalsList
 	}, dispatch)
 }
 

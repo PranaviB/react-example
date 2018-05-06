@@ -4,7 +4,8 @@ import './App.css';
 import Select from './components/Select'
 import AnimalList from './containers/AnimalList'
 import AnimalDetails from './containers/AnimalDetails'
-import AnimalInfo from './containers/AnimalInfo'
+// import AnimalInfo from './containers/AnimalInfo'
+import AddAnimal from './containers/AddAnimal'
 
 
 class App extends Component {
@@ -26,7 +27,7 @@ class App extends Component {
             <AnimalDetails />
           </div>
           <div className="col-sm-3">
-            <AnimalInfo />
+            <AddAnimal />
           </div>
         </div>
       </div>
